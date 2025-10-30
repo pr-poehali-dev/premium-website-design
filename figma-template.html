@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propellini Premium - Figma Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0C0C0C;
+            color: #FFFFFF;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* ========== PAGE 1: ГЛАВНАЯ ========== */
+        .page {
+            width: 1920px;
+            min-height: 1080px;
+            background: #0C0C0C;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Навигация */
+        .navigation {
+            width: 1920px;
+            height: 80px;
+            background: rgba(12, 12, 12, 0.8);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(198, 166, 79, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 160px;
+            position: fixed;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #C6A64F;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 48px;
+        }
+
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: #C6A64F;
+            color: #0C0C0C;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px 32px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            width: 1920px;
+            height: 1080px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+        }
+
+        .hero-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(198, 166, 79, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 1200px;
+            padding: 0 160px;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 120%;
+            margin-bottom: 32px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            color: #BFBFBF;
+            margin-bottom: 48px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #C6A64F;
+            border: 2px solid #C6A64F;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px 32px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Advantages Section */
+        .advantages {
+            width: 1920px;
+            padding: 120px 160px;
+            background: rgba(30, 30, 30, 0.5);
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+        }
+
+        .advantage-card {
+            background: #141414;
+            border: 1px solid rgba(198, 166, 79, 0.2);
+            border-radius: 16px;
+            padding: 48px;
+            text-align: center;
+        }
+
+        .icon-circle {
+            width: 64px;
+            height: 64px;
+            background: rgba(198, 166, 79, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+
+        .icon {
+            width: 32px;
+            height: 32px;
+            color: #C6A64F;
+        }
+
+        .advantage-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .advantage-card p {
+            font-size: 16px;
+            color: #BFBFBF;
+        }
+
+        /* ========== PAGE 2: УСЛУГИ ========== */
+        .services {
+            width: 1920px;
+            min-height: 1080px;
+            padding: 120px 160px;
+            position: relative;
+        }
+
+        .services-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-header h2 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 22px;
+            color: #BFBFBF;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .service-card {
+            background: rgba(20, 20, 20, 0.9);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(198, 166, 79, 0.3);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .service-icon-box {
+            width: 56px;
+            height: 56px;
+            background: rgba(198, 166, 79, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .service-card h3 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            color: #BFBFBF;
+            margin-bottom: 24px;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            font-size: 14px;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-dot {
+            width: 6px;
+            height: 6px;
+            background: #C6A64F;
+            border-radius: 50%;
+        }
+
+        /* ========== PAGE 3: ЦЕНЫ ========== */
+        .prices {
+            width: 1920px;
+            min-height: 1080px;
+            padding: 120px 160px;
+            background: #0C0C0C;
+        }
+
+        .pricing-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: #141414;
+            border: 1px solid rgba(198, 166, 79, 0.3);
+            border-radius: 16px;
+            padding: 64px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-bottom: 1px solid #333333;
+        }
+
+        .price-row:last-child {
+            border-bottom: none;
+        }
+
+        .price-service {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .price-amount {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #C6A64F;
+        }
+
+        .pricing-cta {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        /* ========== PAGE 4: FAQ ========== */
+        .faq {
+            width: 1920px;
+            min-height: 1080px;
+            padding: 120px 160px;
+            position: relative;
+        }
+
+        .faq-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+        }
+
+        .faq-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .faq-item {
+            background: rgba(20, 20, 20, 0.9);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(198, 166, 79, 0.3);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .faq-question {
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .faq-answer {
+            font-size: 18px;
+            color: #BFBFBF;
+            line-height: 160%;
+        }
+
+        /* ========== PAGE 5: О НАС ========== */
+        .about {
+            width: 1920px;
+            min-height: 1080px;
+            padding: 120px 160px;
+            background: rgba(30, 30, 30, 0.5);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .about-text p {
+            font-size: 20px;
+            color: #BFBFBF;
+            margin-bottom: 24px;
+            line-height: 160%;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 48px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: #C6A64F;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #BFBFBF;
+        }
+
+        .about-image {
+            width: 600px;
+            height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ========== PAGE 6: КОНТАКТЫ ========== */
+        .contacts {
+            width: 1920px;
+            min-height: 1080px;
+            padding: 120px 160px;
+            background: #0C0C0C;
+        }
+
+        .contacts-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: #141414;
+            border: 1px solid rgba(198, 166, 79, 0.3);
+            border-radius: 16px;
+            padding: 64px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(198, 166, 79, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-info h4 {
+            font-size: 14px;
+            color: #BFBFBF;
+            margin-bottom: 4px;
+        }
+
+        .contact-info p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .contact-messengers {
+            padding-top: 32px;
+            border-top: 1px solid #333333;
+            margin-top: 32px;
+        }
+
+        .messengers-label {
+            text-align: center;
+            font-size: 16px;
+            color: #BFBFBF;
+            margin-bottom: 24px;
+        }
+
+        .messenger-buttons {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+        }
+
+        .btn-messenger {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px 32px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: #FFFFFF;
+        }
+
+        .btn-telegram {
+            background: #0088cc;
+            color: #FFFFFF;
+        }
+
+        .btn-vk {
+            background: #0077FF;
+            color: #FFFFFF;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            width: 1920px;
+            height: 100px;
+            background: rgba(30, 30, 30, 0.8);
+            border-top: 1px solid rgba(198, 166, 79, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: #BFBFBF;
+        }
+
+        /* ========== КОМПОНЕНТЫ ========== */
+        .components-page {
+            width: 1920px;
+            min-height: 1080px;
+            padding: 80px 160px;
+            background: #0C0C0C;
+        }
+
+        .component-section {
+            margin-bottom: 80px;
+        }
+
+        .component-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: #C6A64F;
+        }
+
+        .button-showcase {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== КОМПОНЕНТЫ (для копирования) ========== -->
+<div class="components-page">
+    <div class="component-section">
+        <h2 class="component-title">Кнопки</h2>
+        <div class="button-showcase">
+            <button class="btn-primary">Primary Button</button>
+            <button class="btn-outline">Outline Button</button>
+            <button class="btn-messenger btn-whatsapp">WhatsApp</button>
+            <button class="btn-messenger btn-telegram">Telegram</button>
+            <button class="btn-messenger btn-vk">VK</button>
+        </div>
+    </div>
+
+    <div class="component-section">
+        <h2 class="component-title">Иконки в кругах</h2>
+        <div class="button-showcase">
+            <div class="icon-circle">
+                <div class="icon">★</div>
+            </div>
+            <div class="contact-icon">
+                <div class="icon">☎</div>
+            </div>
+            <div class="service-icon-box">
+                <div class="icon">✦</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========== PAGE 1: ГЛАВНАЯ ========== -->
+<div class="page">
+    <!-- Навигация -->
+    <nav class="navigation">
+        <div class="logo">Propellini Premium</div>
+        <div class="nav-menu">
+            <a href="#" class="nav-link">Главная</a>
+            <a href="#" class="nav-link">Услуги</a>
+            <a href="#" class="nav-link">Цены</a>
+            <a href="#" class="nav-link">О нас</a>
+            <a href="#" class="nav-link">Контакты</a>
+        </div>
+        <button class="btn-primary">Записаться</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="https://cdn.poehali.dev/projects/0d3193b1-8fe3-4619-abaf-3cbee0c6bc83/files/9c3781ac-d7cb-4adb-a249-bf68ef40e610.jpg" alt="Mercedes" class="hero-bg">
+        <div class="hero-gradient"></div>
+        <div class="hero-content">
+            <h1>Премиальная тонировка<br>и детейлинг</h1>
+            <p>Быстро. Без пыли. С гарантией качества.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary">Записаться</button>
+                <button class="btn-outline">Услуги</button>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Advantages -->
+<section class="advantages">
+    <div class="advantages-grid">
+        <div class="advantage-card">
+            <div class="icon-circle">
+                <div class="icon">🏆</div>
+            </div>
+            <h3>Сертифицированные материалы</h3>
+            <p>Работаем только с проверенными брендами</p>
+        </div>
+        <div class="advantage-card">
+            <div class="icon-circle">
+                <div class="icon">👥</div>
+            </div>
+            <h3>Опытные мастера</h3>
+            <p>Более 10 лет на рынке премиум-услуг</p>
+        </div>
+        <div class="advantage-card">
+            <div class="icon-circle">
+                <div class="icon">⏰</div>
+            </div>
+            <h3>Работаем в день обращения</h3>
+            <p>Быстрая запись и выполнение работ</p>
+        </div>
+    </div>
+</section>
+
+<!-- ========== PAGE 2: УСЛУГИ ========== -->
+<section class="services">
+    <img src="https://cdn.poehali.dev/projects/0d3193b1-8fe3-4619-abaf-3cbee0c6bc83/files/c624e712-481a-4c48-8b36-ebb8550d685b.jpg" alt="BMW" class="services-bg">
+    
+    <div class="section-header">
+        <h2>Наши услуги</h2>
+        <p>Комплексный уход за вашим автомобилем</p>
+    </div>
+
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-icon-box">
+                <div class="icon">✦</div>
+            </div>
+            <h3>Детейлинг</h3>
+            <p>Полный комплекс услуг по уходу за автомобилем</p>
+            <ul class="service-features">
+                <li><span class="feature-dot"></span> Оклейка авто</li>
+                <li><span class="feature-dot"></span> Полировка и керамика</li>
+                <li><span class="feature-dot"></span> Химчистка</li>
+                <li><span class="feature-dot"></span> PDR</li>
+                <li><span class="feature-dot"></span> Замена стёкол</li>
+                <li><span class="feature-dot"></span> Локальная покраска</li>
+            </ul>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon-box">
+                <div class="icon">🛡</div>
+            </div>
+            <h3>Тонировка</h3>
+            <p>Профессиональная тонировка сертифицированными материалами</p>
+            <ul class="service-features">
+                <li><span class="feature-dot"></span> Атермальная тонировка</li>
+                <li><span class="feature-dot"></span> Съёмная тонировка</li>
+                <li><span class="feature-dot"></span> Антигравийная плёнка</li>
+            </ul>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon-box">
+                <div class="icon">💧</div>
+            </div>
+            <h3>Автомойка</h3>
+            <p>Бесконтактная и ручная мойка премиум-класса</p>
+            <ul class="service-features">
+                <li><span class="feature-dot"></span> Бесконтактная мойка</li>
+                <li><span class="feature-dot"></span> Химчистка салона</li>
+                <li><span class="feature-dot"></span> Мойка двигателя</li>
+            </ul>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon-box">
+                <div class="icon">🔊</div>
+            </div>
+            <h3>Шумоизоляция</h3>
+            <p>Качественная изоляция для вашего комфорта</p>
+            <ul class="service-features">
+                <li><span class="feature-dot"></span> Шумоизоляция дверей</li>
+                <li><span class="feature-dot"></span> Шумоизоляция пола</li>
+                <li><span class="feature-dot"></span> Шумоизоляция крыши</li>
+            </ul>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon-box">
+                <div class="icon">⭕</div>
+            </div>
+            <h3>Шиномонтаж</h3>
+            <p>Быстрый и качественный шиномонтаж</p>
+            <ul class="service-features">
+                <li><span class="feature-dot"></span> Монтаж/демонтаж</li>
+                <li><span class="feature-dot"></span> Балансировка</li>
+                <li><span class="feature-dot"></span> Ремонт шин</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ========== PAGE 3: ЦЕНЫ ========== -->
+<section class="prices">
+    <div class="section-header">
+        <h2>Цены</h2>
+        <p>Прозрачное ценообразование</p>
+    </div>
+
+    <div class="pricing-container">
+        <div class="pricing-card">
+            <div class="price-row">
+                <span class="price-service">Тонировка</span>
+                <span class="price-amount">от 4 000 ₽</span>
+            </div>
+            <div class="price-row">
+                <span class="price-service">Детейлинг</span>
+                <span class="price-amount">от 10 000 ₽</span>
+            </div>
+            <div class="price-row">
+                <span class="price-service">Шумоизоляция</span>
+                <span class="price-amount">от 12 000 ₽</span>
+            </div>
+            <div class="price-row">
+                <span class="price-service">Шиномонтаж</span>
+                <span class="price-amount">от 1 000 ₽</span>
+            </div>
+            <div class="price-row">
+                <span class="price-service">Автомойка</span>
+                <span class="price-amount">от 700 ₽</span>
+            </div>
+            <div class="pricing-cta">
+                <button class="btn-primary">Рассчитать стоимость</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== PAGE 4: FAQ ========== -->
+<section class="faq">
+    <img src="https://cdn.poehali.dev/projects/0d3193b1-8fe3-4619-abaf-3cbee0c6bc83/files/65f853f6-2cc8-4236-b9cd-1c45b15cd703.jpg" alt="Detailing" class="faq-bg">
+    
+    <div class="section-header">
+        <h2>Часто задаваемые вопросы</h2>
+    </div>
+
+    <div class="faq-container">
+        <div class="faq-item">
+            <h3 class="faq-question">Какие гарантии вы даёте?</h3>
+            <p class="faq-answer">Мы предоставляем гарантию на все виды работ от 6 месяцев до 3 лет в зависимости от услуги.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Сколько времени занимает тонировка?</h3>
+            <p class="faq-answer">Тонировка автомобиля занимает от 2 до 4 часов в зависимости от типа автомобиля.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Можно ли записаться на сегодня?</h3>
+            <p class="faq-answer">Да, мы стараемся принять клиентов в день обращения. Позвоните нам для уточнения.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Какие материалы вы используете?</h3>
+            <p class="faq-answer">Мы работаем только с сертифицированными материалами премиум-класса от мировых производителей.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ========== PAGE 5: О НАС ========== -->
+<section class="about">
+    <div class="about-grid">
+        <div class="about-text">
+            <h2>О нас</h2>
+            <p>Мы более 10 лет работаем с премиальными автомобилями Mercedes, BMW, Porsche.</p>
+            <p>Наша цель — качество, доверие и стиль. Каждый автомобиль для нас — это не просто работа, а возможность показать мастерство и внимание к деталям.</p>
+            <div class="about-stats">
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Лет опыта</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">Довольных клиентов</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Гарантия качества</div>
+                </div>
+            </div>
+        </div>
+        <div class="about-image">
+            <img src="https://cdn.poehali.dev/projects/0d3193b1-8fe3-4619-abaf-3cbee0c6bc83/files/9c3781ac-d7cb-4adb-a249-bf68ef40e610.jpg" alt="Studio">
+        </div>
+    </div>
+</section>
+
+<!-- ========== PAGE 6: КОНТАКТЫ ========== -->
+<section class="contacts">
+    <div class="section-header">
+        <h2>Контакты</h2>
+        <p>Свяжитесь с нами удобным способом</p>
+    </div>
+
+    <div class="contacts-container">
+        <div class="contact-card">
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <div class="icon">☎</div>
+                </div>
+                <div class="contact-info">
+                    <h4>Телефон</h4>
+                    <p>+7 968 664-88-88</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <div class="icon">⏰</div>
+                </div>
+                <div class="contact-info">
+                    <h4>Время работы</h4>
+                    <p>10:00 — 20:00</p>
+                </div>
+            </div>
+            <div class="contact-messengers">
+                <p class="messengers-label">Мессенджеры</p>
+                <div class="messenger-buttons">
+                    <button class="btn-messenger btn-whatsapp">💬 WhatsApp</button>
+                    <button class="btn-messenger btn-telegram">📨 Telegram</button>
+                    <button class="btn-messenger btn-vk">👥 VK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+    <p>© 2025 Propellini Premium. Все права защищены.</p>
+</footer>
+
+</body>
+</html>
